@@ -528,6 +528,10 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
 - (void)displayLayer:(CALayer *)layer {
     if (_curFrame) {
         layer.contents = (__bridge id)_curFrame.CGImage;
+    } else {
+        if (@available(iOS 14.0, *)) {
+            [super displayLayer:layer];
+        }
     }
 }
 
@@ -577,7 +581,7 @@ typedef NS_ENUM(NSUInteger, YYAnimatedImageType) {
     if (currentAnimatedImageIndex >= _curAnimatedImage.animatedImageFrameCount) return;
     if (_curIndex == currentAnimatedImageIndex) return;
     
-    void (^block)() = ^{
+    void (^block)(void) = ^{
         LOCK(
              [_requestQueue cancelAllOperations];
              [_buffer removeAllObjects];

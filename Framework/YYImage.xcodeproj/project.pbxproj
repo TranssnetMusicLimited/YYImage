@@ -162,7 +162,7 @@
 		D9A995161F0564180062698B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = ibireme;
 				TargetAttributes = {
 					D9A9951E1F0564180062698B = {
@@ -176,6 +176,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D9A995151F0564180062698B;
 			productRefGroup = D9A995201F0564180062698B /* Products */;
